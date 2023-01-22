@@ -23,6 +23,7 @@ To run a PrestoDB 0.181 with Hive connector:
   docker-compose up -d presto-coordinator
 ```
 
+TEST 
 This deploys a Presto server listens on port `8080`
 
 ## Testing
