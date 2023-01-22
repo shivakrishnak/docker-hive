@@ -17,6 +17,7 @@ To run Hive with postgresql metastore:
     docker-compose up -d
 ```
 
+
 Check it on `http://localhost:8888`
 
 This deploys a Hue server listens on port `8888`
