@@ -38,12 +38,13 @@ services:
       - "10000:10000"
   hive-metastore-postgresql:
     <<: *common
-    image: menorah84/hive-metastore-postgresql:3.1.0
+    image: peerlesscnn/hive-metastore-postgresql:2.3.0
     platform: linux/arm64
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - ./conf/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - postgres:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD", "pg_isready", "-U", "hue" ]
       interval: 5s
@@ -75,3 +76,4 @@ services:
 volumes:
   namenode:
   datanode:
+  postgres:
