@@ -38,7 +38,7 @@ services:
       - "10000:10000"
   hive-metastore-postgresql:
     <<: *common
-    image: peerlesscnn/hive-metastore-postgresql:2.3.0
+    image: bde2020/hive-metastore-postgresql:2.3.0
     platform: linux/arm64
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
@@ -64,7 +64,7 @@ services:
         condition: service_healthy
   hue:
     <<: *common
-    image: gethue/hue
+    image: gethue/hue:20230220-140101
     ports:
       - "8888:8888"
     volumes:
